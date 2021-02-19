@@ -10,7 +10,9 @@ const ListContextProvier = props => {
   ]);
 
   return (
-    <ListContext.Provider value={tasks}>{props.children}</ListContext.Provider>
+    <ListContext.Provider value={{ tasks }}>
+      {props.children}
+    </ListContext.Provider>
   );
 };
 
