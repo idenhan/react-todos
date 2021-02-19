@@ -4,9 +4,9 @@ export const ListContext = createContext();
 
 const ListContextProvier = props => {
   const [tasks, setTasks] = useState([
-    { task: "Drink Enough Water", id: 1 },
-    { task: "Eat Enough Vegetables", id: 2 },
-    { task: "Code to make the world better", id: 3 },
+    { title: "Drink Enough Water", id: 1 },
+    { title: "Eat Enough Vegetables", id: 2 },
+    { title: "Code to make the world better", id: 3 },
   ]);
 
   return (
