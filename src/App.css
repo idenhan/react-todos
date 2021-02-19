@@ -94,7 +94,7 @@
   cursor: pointer;
 }
 
-.clean-btn {
+.clear-btn {
   width: 100px;
   height: 35px;
   background-color: #f0a3a2;
@@ -136,4 +136,12 @@
   font-size: 16px;
   color: #ffb802;
   margin-right: 20px;
+}
+
+.no-tasks {
+  color: #777;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
 }

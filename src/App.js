@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import List from "./components/List";
 import ListContextProvier from "./context/ListContext";
-import "./App.css";
 import TaskForm from "./components/TaskForm";
 import Header from "./components/Header";
+
+import "./App.css";
 
 const App = () => {
   return (

@@ -1,18 +1,33 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ListContext } from "../context/ListContext";
 
 const TaskForm = () => {
-  const { addTask } = useContext(ListContext);
-
+  const { addTask, clearList, editTask, editItem } = useContext(ListContext);
   const [title, setTitle] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    if (!editItem) {
+      addTask(title);
+      setTitle("");
+    } else {
+      editTask(title, editItem.id);
+    }
   };
+
   const handleChange = e => {
     setTitle(e.target.value);
-    console.log(title);
   };
+
+  useEffect(() => {
+    if (editItem) {
+      setTitle(editItem.title);
+    } else {
+      setTitle("");
+    }
+  }, [editItem]);
+
   return (
     <form onSubmit={handleSubmit} className="form">
       <input
@@ -20,14 +35,15 @@ const TaskForm = () => {
         className="task-input"
         placeholder="Add Task"
         required
-        onChnage={handleChange}
+        value={title}
+        onChange={handleChange}
       />
       <div className="buttons">
         <button type="submit" className="btn add-task-btn">
-          Add Task
+          {editItem ? "Edit Task" : "Add Task"}
         </button>
-        <button type="submit" className="btn clean-btn">
-          Clean
+        <button type="submit" className="btn clear-btn" onClick={clearList}>
+          Clear
         </button>
       </div>
     </form>

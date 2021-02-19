@@ -35,8 +35,6 @@ const ListContextProvier = props => {
   const editTask = (title, id) => {
     const newTasks = tasks.map(task => (task.id === id ? { title, id } : task));
 
-    console.log(newTasks);
-
     setTasks(newTasks);
     setEditItem(null);
   };
