@@ -27,6 +27,14 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
+.header h1 {
+  color: #333333;
+  font-weight: 300;
+  text-align: center;
+  margin: 50px 20px 60px 20px;
+  font-family: 'Josefin Sans', serif;
+}
+
 .main {
   display: flex;
   flex-direction: column;
