@@ -57,21 +57,37 @@ const ValidationForm = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        id="jumin1"
-        value={juminFirst}
-        onChange={handleJuminFirstChange}
-      />
-      <input
-        type="text"
-        id="jumin2"
-        value={juminLast}
-        onChange={handleJuminLastChange}
-      />
-      <input type="button" value="검사" onClick={() => handleClick()} />
-    </div>
+    <form className="form">
+      <div>
+        <input
+          type="text"
+          className="vali-input"
+          placeholder="주민번호 앞 6자리"
+          required
+          value={juminFirst}
+          onChange={handleJuminFirstChange}
+        />
+        <span className="gap">-</span>
+        <input
+          type="text"
+          className="vali-input"
+          placeholder="주민번호 뒷 7자리"
+          required
+          value={juminLast}
+          onChange={handleJuminLastChange}
+        />
+      </div>
+      <div className="buttons">
+        <button
+          type="submit"
+          className="btn check-btn"
+          onClick={() => handleClick()}
+        >
+          <i class="fas fa-check-circle"></i>
+          Check
+        </button>
+      </div>
+    </form>
   );
 };
 
