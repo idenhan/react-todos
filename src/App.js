@@ -1,24 +1,19 @@
 import React from "react";
-import List from "./components/List";
 import ListContextProvier from "./context/ListContext";
-import TaskForm from "./components/TaskForm";
-import Header from "./components/Header";
 
-import "./App.css";
+import JuminNaver from "./containers/JuminNaver";
+import Todos from "./containers/Todos";
 
 const App = () => {
   return (
-    <ListContextProvier>
-      <div className="container">
-        <div className="app-wrapper">
-          <Header />
-          <div className="main">
-            <TaskForm />
-            <List />
-          </div>
+    <React.Fragment>
+      <ListContextProvier>
+        <div className="container">
+          <Todos />
+          <JuminNaver />
         </div>
-      </div>
-    </ListContextProvier>
+      </ListContextProvier>
+    </React.Fragment>
   );
 };
 
