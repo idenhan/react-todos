@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
-import cheerio from "cheerio";
 
 /*
   // Node.js 를 통해 웹 스크래핑을 하고자 했으나, 
@@ -18,11 +16,13 @@ import cheerio from "cheerio";
         const ranking = $(".ranking_list");
         console.log(html);
         console.log(ranking.text());
+        // 스크래핑 불가
 
         $(".footer").each((i, el) => {
           const title = $(el).find(".link_naver").text();
 
           console.log(title);
+          // footer와 Header는 스크래핑 가능
         });
       }
     }
