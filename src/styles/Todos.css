@@ -128,16 +128,10 @@
   outline: none;
 }
 
-.btn-delete i {
+.task i {
   font-size: 16px;
   color: #ffb802;
-  margin-right: 20px;
-}
-
-.btn-edit i {
-  font-size: 16px;
-  color: #ffb802;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .no-tasks {
@@ -146,4 +140,97 @@
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
+}
+
+
+/* When task.completed is true */
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-wrapper .checkbox-label {
+  display: flex-inline;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox-wrapper {
+  margin-left: 5px;
+  position: relative;
+}
+
+.custom-checkbox {
+  --size: 0.75em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  cursor: pointer;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.checkbox + .checkbox-label .custom-checkbox {
+  background: #8e8eff;
+  border-color: #8e8eff;
+  box-shadow: inset 0 0 0px 2px white;
+}
+
+.checkbox + .checkbox-label {
+  opacity: 0.5;
+}
+
+.complete {
+  text-decoration-style: solid;
+  text-decoration-line: line-through;
+  text-decoration-color: #000000;
+  opacity: 0.6;
+}
+
+/* When task.completed is false */
+
+.checkbox-false {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-wrapper-false .checkbox-label-false {
+  display: flex-inline;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox-wrapper-false {
+  margin-left: 5px;
+  position: relative;
+}
+
+.custom-checkbox-false {
+  --size: 0.75em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  cursor: pointer;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.checkbox-wrapper-false:hover .custom-checkbox-false,
+.checkbox-false:focus + .checkbox-label-false .custom-checkbox-false {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #8e8eff;
 }

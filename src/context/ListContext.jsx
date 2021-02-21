@@ -15,7 +15,7 @@ const ListContextProvier = props => {
   const [editItem, setEditItem] = useState(null);
 
   const addTask = title => {
-    setTasks([...tasks, { title, id: uuid() }]);
+    setTasks([...tasks, { title, id: uuid(), completed: false }]);
   };
 
   const removeTask = id => {
@@ -39,12 +39,24 @@ const ListContextProvier = props => {
     setEditItem(null);
   };
 
+  const markTask = task => {
+    setTasks(
+      tasks.map(item => {
+        if (item.id === task.id) {
+          return { ...item, completed: !item.completed };
+        }
+        return item;
+      })
+    );
+  };
+
   return (
     <ListContext.Provider
       value={{
         tasks,
         addTask,
         removeTask,
+        markTask,
         clearList,
         findTask,
         editTask,
