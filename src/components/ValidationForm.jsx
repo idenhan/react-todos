@@ -57,7 +57,7 @@ const ValidationForm = () => {
   };
 
   return (
-    <form className="form">
+    <form className="vali-form">
       <div>
         <input
           type="text"

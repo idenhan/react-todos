@@ -1,7 +1,7 @@
 import React from "react";
 import ListContextProvier from "./context/ListContext";
 
-import JuminNaver from "./containers/JuminNaver";
+import Jumin from "./containers/Jumin";
 import Todos from "./containers/Todos";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
       <ListContextProvier>
         <div className="container">
           <Todos />
-          <JuminNaver />
+          <Jumin />
         </div>
       </ListContextProvier>
     </React.Fragment>
